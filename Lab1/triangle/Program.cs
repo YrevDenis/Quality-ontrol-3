@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 class Program
 {
-    const int MAX_SIDE = 10000000; // 5000000
+    const int MAX_SIDE = 500001;
     static void Main(string[] args)
     {
         if (args.Length != 3)
@@ -25,14 +25,9 @@ class Program
         }
     }
 
-static string DetermineTriangleType(double a, double b, double c)
+    static string DetermineTriangleType(double a, double b, double c)
     {
-        if (a <= 0 || b <= 0 || c <= 0)
-        {
-            return "Ошибка";
-        }
-
-        if (a + b > MAX_SIDE || a + c > MAX_SIDE || b + c > MAX_SIDE)
+        if (a <= 0 || b <= 0 || c <= 0 || a >= MAX_SIDE || b >= MAX_SIDE || c >= MAX_SIDE)
         {
             return "Ошибка";
         }
